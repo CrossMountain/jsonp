@@ -26,7 +26,6 @@ If it times out, the `err` will be an `Error` object whose `message` is
 `Timeout`.
 
 ## Usage|Example 
-<<<<<<< HEAD
 ```
 var jsonp = require('jsonp')  
 jsonp(url, function(err, data) {    
@@ -34,7 +33,7 @@ jsonp(url, function(err, data) {
         console.log(err)    
     } else {    
         console.log(data)   
-    }    </br>
+    }   
 }
 ```
 
