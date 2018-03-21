@@ -5,10 +5,10 @@ A simple JSONP implementation.
 
 ## API
 
-### jsonp(url, opts, fn)
+### jsonp(url, callback, opts)
 
 - `url` (`String`) url to fetch
-- `fn` callback
+- `callback` callback
 - `opts` (`Object`), optional
   - `param` (`String`) name of the query string parameter to specify
     the callback (defaults to `callback`)
@@ -24,6 +24,16 @@ The callback is called with `err, data` parameters.
 
 If it times out, the `err` will be an `Error` object whose `message` is
 `Timeout`.
+
+## Usage|Example 
+var jsonp = require('jsonp')
+jsonp(url, function(err, data) {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(data)
+    }
+  }
 
 ## License
 
