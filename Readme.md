@@ -26,14 +26,14 @@ If it times out, the `err` will be an `Error` object whose `message` is
 `Timeout`.
 
 ## Usage|Example 
-var jsonp = require('jsonp')
-jsonp(url, function(err, data) {
-    if (err) {
-      console.log(err)
-    } else {
-      console.log(data)
-    }
-  }
+var jsonp = require('jsonp') \n
+jsonp(url, function(err, data) {\n
+    if (err) {\n
+      console.log(err)\n
+    } else {\n
+      console.log(data)\n
+    }\n
+  }\n
 
 ## License
 
