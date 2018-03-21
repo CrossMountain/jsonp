@@ -28,12 +28,12 @@ If it times out, the `err` will be an `Error` object whose `message` is
 ## Usage|Example 
 <<<<<<< HEAD
 ```
-var jsonp = require('jsonp')  </br>
-jsonp(url, function(err, data) {    </br>
-    if (err) {    </br>
-        console.log(err)    </br>
-    } else {    </br>
-        console.log(data)   </br>
+var jsonp = require('jsonp')  
+jsonp(url, function(err, data) {    
+    if (err) {    
+        console.log(err)    
+    } else {    
+        console.log(data)   
     }    </br>
 }
 ```
