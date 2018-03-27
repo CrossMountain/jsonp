@@ -18,12 +18,14 @@ A simple JSONP implementation.
     handle jsonp responses (defaults to `__jp`)
   - `name` (`String`) name of the global callback functions that
     handle jsonp responses (defaults to `prefix` + incremented counter)
-
+Returns a function that, when called, will cancel the in-progress jsonp request
+(`fn` won't be called).
 
 The callback is called with `err, data` parameters.
 
 If it times out, the `err` will be an `Error` object whose `message` is
 `Timeout`.
+
 
 ## Usage|Example 
 ```

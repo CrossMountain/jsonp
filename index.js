@@ -26,7 +26,7 @@ function noop() {}
  *                          timeout (Number) how long after a timeout error is emitted. 0 to disable (defaults to 10000)
  *                          prefix (String) prefix for the global callback functions that handle jsonp responses (defaults to __jp)
  *                          name (String) name of the global callback functions that handle jsonp responses (defaults to prefix + incremented *                          counter)
- * @return {Null}   
+ * @return {Function}    retrun a function,you can execute it to cancel the jsonp function
  */
 function jsonp(url, callback, opts) {
   if (!opts) opts = {};
@@ -55,7 +55,12 @@ function jsonp(url, callback, opts) {
   url = urlHandle(url, param, id)
   var script = createScript(url)
 
-  return null
+  function cancel(){
+    if (window[id]) {
+      cleanup();
+    }
+  }
+  return cancel
 }
 
 function createScript(url) {
@@ -92,3 +97,4 @@ function cleanup(script, id, timer) {
   window[id] = null;
   if (timer) clearTimeout(timer);
 }
+
